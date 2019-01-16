@@ -4,7 +4,7 @@ const { SECRET } = require('../constants');
 exports.authenticate = (req, res, next) => {
   const token =
     (req.headers.authorization && req.headers.authorization.split(' ')[1]) ||
-    req.headers['X-ACCESS-Token'];
+    req.headers['x-access-token'];
   if (!token) {
     return res
       .status(401)
